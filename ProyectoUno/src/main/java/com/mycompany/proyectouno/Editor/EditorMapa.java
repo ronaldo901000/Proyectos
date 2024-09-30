@@ -89,7 +89,7 @@ public class EditorMapa {
         String nombrePlaneta2 = scanner.next();
         Planeta planetaJugador2 = editorPlaneta.seleccionarPlanetaAleatorio(nombrePlaneta2, motorJuego.getJugador2());
         mapa.agregarPlaneta(planetaJugador2);
-        editorPlaneta.editarPlaneta(planetaJugador2);  // Llamar método para editar el planeta
+        editorPlaneta.editarPlaneta(planetaJugador2);  
         editorPlaneta.mostrarCondicionesIniciales(planetaJugador2);
     }
 
@@ -108,31 +108,31 @@ public class EditorMapa {
 
     // Método encargado de generar los planetas neutrales
 // Método encargado de generar los planetas neutrales
-private void definirPlanetasNeutrales(MotorJuego motorJuego, Mapa mapa) {
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Ingresa la cantidad de planetas neutrales: ");
-    int cantidadNeutrales = scanner.nextInt();
+    private void definirPlanetasNeutrales(MotorJuego motorJuego, Mapa mapa) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingresa la cantidad de planetas neutrales: ");
+        int cantidadNeutrales = scanner.nextInt();
 
-    for (int i = 0; i < cantidadNeutrales; i++) {
-        String nombreNeutral;
+        for (int i = 0; i < cantidadNeutrales; i++) {
+            String nombreNeutral;
 
-        System.out.println("¿Deseas ingresar el nombre del planeta neutral? (si = 1 / no = 2): ");
-        int opcion = scanner.nextInt();
+            System.out.println("¿Deseas ingresar el nombre del planeta neutral? (si = 1 / no = 2): ");
+            int opcion = scanner.nextInt();
 
-        if (opcion == 1) {
-            System.out.print("Ingresa el nombre del planeta neutral: ");
-            nombreNeutral = scanner.next();
-        } else {
-            nombreNeutral = editorPlaneta.generarNombreSecuencial();
+            if (opcion == 1) {
+                System.out.print("Ingresa el nombre del planeta neutral: ");
+                nombreNeutral = scanner.next();
+            } else {
+                nombreNeutral = editorPlaneta.generarNombreSecuencial();
+            }
+
+            // Crear planeta neutral sin dueño
+            Planeta planetaNeutral = editorPlaneta.seleccionarPlanetaAleatorio(nombreNeutral, null);
+            mapa.agregarPlaneta(planetaNeutral);
+            editorPlaneta.editarPlaneta(planetaNeutral);
+            editorPlaneta.mostrarCondicionesIniciales(planetaNeutral);
         }
-        
-        // Crear planeta neutral sin dueño
-        Planeta planetaNeutral = editorPlaneta.seleccionarPlanetaAleatorio(nombreNeutral, null);
-        mapa.agregarPlaneta(planetaNeutral);
-        editorPlaneta.editarPlaneta(planetaNeutral);
-        editorPlaneta.mostrarCondicionesIniciales(planetaNeutral);
     }
-}
 
 }
 

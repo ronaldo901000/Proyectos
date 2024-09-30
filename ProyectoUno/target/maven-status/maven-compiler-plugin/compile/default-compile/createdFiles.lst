@@ -2,6 +2,7 @@ com/mycompany/proyectouno/Planeta/Tierra.class
 com/mycompany/proyectouno/Guerrero/Terradiente.class
 com/mycompany/proyectouno/Guerrero/Rdonix.class
 com/mycompany/proyectouno/Constructor/Obrero.class
+com/mycompany/proyectouno/Flota.class
 com/mycompany/proyectouno/Nave/Odisea.class
 com/mycompany/proyectouno/Editor/EditorPlaneta.class
 com/mycompany/proyectouno/Jugador.class
@@ -27,7 +28,6 @@ com/mycompany/proyectouno/Menu.class
 com/mycompany/proyectouno/Guerrero/Aquaris.class
 com/mycompany/proyectouno/Planeta/Fuego.class
 com/mycompany/proyectouno/Guerrero/Ignis.class
-com/mycompany/proyectouno/GuerreroRdonix.class
 com/mycompany/proyectouno/Planeta/Planeta.class
 com/mycompany/proyectouno/Nave/Helios.class
 com/mycompany/proyectouno/Planeta/Biotara.class

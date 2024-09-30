@@ -47,6 +47,20 @@ public class Turno {
                     String parametros = MotorJuego.scanner.nextLine();
                     Accion accion = new Accion(parametros, mapa, jugador);
                     accion.verPlaneta();
+                    System.out.println("Presiona enter para continuar");
+                    scanner.nextLine();
+                }
+                case "4" -> {
+
+                    System.out.println("Envio de flota");
+                    System.out.println("Ingrese el planeta origen, cantidad de guerreros, tipo de guerreros, "
+                            + "tipo de nave, planeta destino, dinero destinado a recursos");
+                    System.out.println("Ejemplo: A1,21,Ignis,Galaxia Prime,G4, 80");
+                    
+                    String parametros = MotorJuego.scanner.nextLine();
+                    acciones[0]= parametros;
+                    Accion accion = new Accion(parametros, mapa, jugador);
+                    accion.enviarFlota();
                 }
                 case "8" -> { // No se empila
                     if (jugador == 1) {
@@ -57,7 +71,6 @@ public class Turno {
                     return acciones;
                 }
             }
-            numeroTurno++;
         }
     }
 }

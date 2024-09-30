@@ -43,6 +43,7 @@ public class Fuego extends Planeta {
 
     
     // Método para generar estelares por turno y sumar a la cantidad existente
+    @Override
     public void generarEstelaresPorTurno() {
         int cantidadGenerada = new Random().nextInt(71) + 70;  // Genera entre 60 y 120 estelares
         this.estelares += cantidadGenerada;  // Suma a la cantidad existente

@@ -14,7 +14,8 @@ public class Menu {
         System.out.println("Seleccione una opción (1-3)");
         System.out.println("1) Crear Mapa");
         System.out.println("2) Iniciar Partida");
-        System.out.println("3) Salir");
+        System.out.println("3) Editar un mapa existente");
+        System.out.println("4) Salir");
     }
 
     public void mostrarMenuTurno(int numeroJugador, MotorJuego motorJuego){

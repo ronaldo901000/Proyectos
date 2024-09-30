@@ -30,6 +30,7 @@ public class MotorJuego {
         menuInicio.mostrarMenuInicio();
         opcion = scanner.nextInt();
 
+        limpiarConsola();
         if (opcion == 1) {
             EditorMapa editorMapa = new EditorMapa();
             Mapa nuevoMapa = editorMapa.inicializarJuego(this);
@@ -42,7 +43,6 @@ public class MotorJuego {
             System.out.println("Entrando a la partida");
             iniciarPartida();
         }
-        // Comenzar el ciclo del juego
 
     }
 
@@ -64,31 +64,41 @@ public class MotorJuego {
         }
     }
 
-    private void iniciarTurnos(Mapa mapa) {
+private void iniciarTurnos(Mapa mapa) {
 
-        boolean partidaEnProgreso = true;
-        int numTurno = 1;
+    boolean partidaEnProgreso = true;
+    int numTurno = 1;
 
-        while (partidaEnProgreso) {
+    while (partidaEnProgreso) {
 
-            limpiarConsola();
+        limpiarConsola();
 
-            Turno turnoJugador1 = new Turno(numTurno);
-            Turno turnoJugador2 = new Turno(numTurno);
+        // Jugador 1 toma su turno
+        Turno turnoJugador1 = new Turno(numTurno);
+        String[] accionesj1 = turnoJugador1.ejecutarTurno(1, mapa, this);
 
-            String[] accionesj1 = turnoJugador1.ejecutarTurno(1, mapa,this);
-            String[] accionesj2 = turnoJugador2.ejecutarTurno(2, mapa,this);
+        // Jugador 2 toma su turno
+        Turno turnoJugador2 = new Turno(numTurno);
+        String[] accionesj2 = turnoJugador2.ejecutarTurno(2, mapa, this);
 
-            //ejecutarAccionesEmpiladas(accionesj1, accionesj2, mapa);
-            System.out.println("Presione cualquier tecla para continuar");
-            MotorJuego.scanner.nextLine();
+        // Ejecuta las acciones de ambos jugadores
+        // ejecutarAccionesEmpiladas(accionesj1, accionesj2, mapa);
 
-            //if(partidaTerminada(mapa)){
-            // partidaEnProgreso = false;
-            //}
-        }
+        
+        System.out.println("Presione cualquier tecla para continuar");
+        MotorJuego.scanner.nextLine();
 
+        // Incrementar el número de turno después de que ambos jugadores hayan terminado su turno
+        numTurno++;
+
+        // Si la partida ha terminado, salir del bucle
+        // if(partidaTerminada(mapa)){
+        //     partidaEnProgreso = false;
+        // }
     }
+
+}
+
 
     private void agregarMapa(Mapa nuevoMapa) {
         if (mapas == null) {

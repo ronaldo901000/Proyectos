@@ -14,6 +14,11 @@ public class Jugador {
     private String nombre;
     private int cantidadConquistas;
     private Planeta[] planetasConquistados;
+    private boolean rendido;
+
+    public boolean isRendido() {
+        return rendido;
+    }
 
 
     public Jugador (String nombre) {

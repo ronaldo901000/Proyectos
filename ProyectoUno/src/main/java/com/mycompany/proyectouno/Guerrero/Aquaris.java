@@ -17,4 +17,5 @@ public class Aquaris extends Guerrero {
     public String ataqueEspecial() {
         return "Turbo chorro venenoso al enemigo.";
     }
+
 }

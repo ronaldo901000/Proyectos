@@ -41,9 +41,8 @@ public class Agua extends Planeta {
         return new Aquaris();  // Crear un guerrero de tipo Aquaris
     }
 
-
-    
     // Método para generar estelares por turno y sumar a la cantidad existente
+    @Override
     public void generarEstelaresPorTurno() {
         int cantidadGenerada = new Random().nextInt(61) + 60;  // Genera entre 60 y 120 estelares
         this.estelares += cantidadGenerada;  // Suma a la cantidad existente

@@ -4,18 +4,20 @@
  */
 package com.mycompany.proyectouno.Nave;
 
+import com.mycompany.proyectouno.Guerrero.Guerrero;
+
 /**
  *
  * @author ronaldo
  */
 public abstract class Nave {
-    private String nombre;
-    private int capacidad;
-    private double tasaBase;
-    private double factorDistancia;
-    private double factorRecursos;
-    private int costoProduccion;
-    private double velocidad;
+    protected String nombre;
+    protected int capacidad;
+    protected double tasaBase;
+    protected double factorDistancia;
+    protected double factorRecursos;
+    protected int costoProduccion;
+    protected double velocidad;
 
     public Nave(String nombre, int capacidad, double tasaBase, double factorDistancia, double factorRecursos, int costoProduccion, double velocidad) {
         this.nombre = nombre;
@@ -26,6 +28,7 @@ public abstract class Nave {
         this.costoProduccion = costoProduccion;
         this.velocidad = velocidad;
     }
+
 
     // Métodos Getters
     public String getNombre() {
@@ -56,12 +59,6 @@ public abstract class Nave {
         return velocidad;
     }
 
-    // Método para calcular la Tasa de Supervivencia
-    public double calcularTasaSupervivencia(double distancia, double recursosAdicionales) {
-        double tasaSupervivencia = tasaBase - (distancia * factorDistancia) + (recursosAdicionales / 10) * factorRecursos;
-        return Math.max(0, Math.min(tasaSupervivencia, 100));  // Asegura que la tasa esté entre 0 y 100
-    }
+   public abstract double calcularTasaSupervivencia(double distancia, double recursosAdicionales);
 
-    // Método abstracto para el efecto de la Tasa de Supervivencia
-    public abstract void efectoTasaSupervivencia(double tasaSupervivencia, int cantidadGuerreros);
 }

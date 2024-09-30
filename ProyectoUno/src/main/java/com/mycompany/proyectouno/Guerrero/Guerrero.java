@@ -33,5 +33,13 @@ public abstract class Guerrero {
 
     public abstract String ataqueEspecial(); // Método abstracto para el ataque especial
 
+    public void setFactorMuerte(double factorMuerte) {
+        this.factorMuerte = factorMuerte;
+    }
+    public void incrementarFactorMuerte(double aumento){
+    this.factorMuerte+=aumento;
+    }
+    
+
     
 }

@@ -48,6 +48,7 @@ public class Biotara extends Planeta {
 
     
     // Método para generar estelares por turno y sumar a la cantidad existente
+    @Override
     public void generarEstelaresPorTurno() {
         int cantidadGenerada = new Random().nextInt(81) + 80;  // Genera entre 60 y 120 estelares
         this.estelares += cantidadGenerada;  // Suma a la cantidad existente

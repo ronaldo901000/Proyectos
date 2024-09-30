@@ -64,8 +64,7 @@ public class EditorPlaneta {
 public void mostrarCondicionesIniciales(Planeta planeta) {
     System.out.println("\nCondiciones iniciales del planeta:");
     System.out.println("Nombre del planeta: " + planeta.getNombre());
-
-    // Verifica si el planeta tiene un dueño
+    // Verificar si el planeta tiene un dueño
     if (planeta.getDueño() != null) {
         System.out.println("Dueño del planeta: " + planeta.getDueño().getNombre());
     } else {
@@ -100,25 +99,23 @@ public void mostrarCondicionesIniciales(Planeta planeta) {
             int cantidadConstructores = scanner.nextInt();
             Constructor[] nuevosConstructores = new Constructor[cantidadConstructores];
             for (int i = 0; i < cantidadConstructores; i++) {
-                nuevosConstructores[i] = new Obrero();  // Aquí puedes personalizar el tipo de constructor
+                nuevosConstructores[i] = new Obrero(); 
             }
             planeta.setConstructores(nuevosConstructores);
 
-            // Editar cantidad de naves
             System.out.print("Ingresa la  cantidad de naves: ");
             int cantidadNaves = scanner.nextInt();
             Nave[] nuevasNaves = new Nave[cantidadNaves];
             for (int i = 0; i < cantidadNaves; i++) {
-                nuevasNaves[i] = new Helios();  // Aquí puedes personalizar el tipo de nave
+                nuevasNaves[i] = new Helios(); 
             }
             planeta.setNaves(nuevasNaves);
 
-            // Editar cantidad de guerreros
             System.out.print("Ingresa la nueva cantidad de guerreros: ");
             int cantidadGuerreros = scanner.nextInt();
             Guerrero[] nuevosGuerreros = new Guerrero[cantidadGuerreros];
             for (int i = 0; i < cantidadGuerreros; i++) {
-                nuevosGuerreros[i] = planeta.crearGuerrero();  // Aquí se usa el método abstracto para crear el tipo de guerrero adecuado
+                nuevosGuerreros[i] = planeta.crearGuerrero(); 
 
                 planeta.setGuerreros(nuevosGuerreros);
             }
