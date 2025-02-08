@@ -1,0 +1,23 @@
+ALgoritmo juego RPG
+
+1. Personaje
+    Nombre
+    Puntos de vida
+    Puntos de mana
+    Experiencia
+    Nivel
+
+2.Acciones
+    Batalla
+    Tienda
+    Dormir y recuperar
+    Estadisticas
+    Subir nivel
+    Salir
+
+Acciones Batalla
+    Turnos 
+        Aleatorio quien Inicia primero
+    Atacar
+    Curar
+      
